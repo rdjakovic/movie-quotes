@@ -35,7 +35,7 @@ body::before {
     padding: 40px;
     border-radius: 15px;
     margin-bottom: 30px;
-    max-width: 600px;
+    max-width: 80%;
 }
 
 .quote {
@@ -43,6 +43,14 @@ body::before {
     margin-bottom: 20px;
 }
 
+.quote-details p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.quote-details strong {
+    color: #ff4500;
+}
 .movie {
     font-size: 1.5rem;
     font-style: italic;
