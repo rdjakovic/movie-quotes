@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getQuote = async () => {
     try {
-      const response = await fetch(
-        "https://cors-anywhere.herokuapp.com/https://quoteapi.pythonanywhere.com/random"
-      );
+      const response = await fetch("quotes.json");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      const quote = data.Quotes[0];
+      const quotes = data.Quotes[0];
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quote = quotes[randomIndex];
       quoteText.textContent = `"${quote.quote}"`;
       movieText.textContent = `- ${quote.author}`;
     } catch (error) {
